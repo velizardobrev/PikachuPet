@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app='MsgApp'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Bootstrap Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">    
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Pikachu Pet App</title>
+  </head>
+<body ng-controller='MsgController'>
+ 
+<!--Game Container -->
+ <div  class="container" style="background-image:url('/background.gif')>
+       <section.alpha>
+        <div class="row">
+             <div class="col-lg-8">
+                 <img src="images/title.png" class="img-responsive" alt="image"><p> Beta </p> 
+                 
+             </div>
+          <div>
+         </section>    
+     <section>
+        <div class="row">
+
+            
+        </div>
+         <div class="page-header" id="features">
+             <h2>Day #{{daycounter}} You have a message from {{name}}:</h2>
+         </div> <!--header -->
+         <!--gametext -->
+         <div class="row">
+
+             <div class="col-lg-8">
+                <h3> 
+                <p>{{sayMessage()}}</p>
+                
+                </h3>
+                
+              </div> 
+          </div>
+          <!--Topbuttons -->
+          <div class="row">
+
+             <div class="col-lg-8">
+                <h3>
+                <p>Score: {{score}} </p> 
+                <button ng-click="StartPika()" type="button" class="btn btn-warning">New Game</button>
+                <button ng-click="NextDay()" ng-disabled="nextkey" type="button" class="btn btn-warning">Next Day</button>
+                
+                </h3>
+               
+              </div> 
+          </div>
+          <!--Gamedisplay -->
+        <div class="row">
+             <div class="col-lg-8">
+                 <img height="300" width="400" ng-src="images/PIKA-{{stateOfBeing}}.gif">
+             </div>
+            
+        </div>
+          <!--bottomButtons -->
+          <div class="row">
+
+             <div class="col-lg-8">
+                <h3>
+                <button ng-click="feedPika()" ng-disabled="feedkey" type="button" class="btn btn-warning">Feed</button>
+                <button ng-click="disciplinePika()" ng-disabled="disciplinekey" type="button" class="btn btn-warning">Discipline</button>
+                <button ng-click="workoutPika()" ng-disabled="trainingkey" type="button" class="btn btn-warning">Training</button>
+                <button ng-click="petPika()" ng-disabled="petkey" type="button" class="btn btn-warning">Pet</button> 
+
+                
+                </h3>
+               
+              </div> 
+          </div>
+          <!--Hints -->                  
+        <div class="row">
+
+             <div class="col-lg-8">
+                <h4> 
+                <p>Hints: {{hint}}</p>
+                <hr>
+                </h4>
+                        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <a href="#collapse-3" data-toggle="collapse" data-parent="#accordion">
+                        <strong>Message from the Developer Velizar Dobrev</strong>
+                    </a>
+                </div><!--end panel title-->
+
+                <div id="collapse-3" class="panel-collapse collapse">
+                    <div class="panel-doby">
+                     This game is a FREE and Open Source non-commercial project designed 
+                     to test some of the capabilities of the latest web technologies and AngularJS.
+                    <br>
+                    <br>
+                     Your goal is to choose activity each day depending on the needs of Pikachu.
+                     If he is happy you get scores. If he is not you may correct the next day.
+                     Two wrong choices and the game is over.
+                     
+                    </div>
+                </div><!--end panel collapse-->
+                  
+            </div>
+        </div><!--FAQelement -->
+              </div> 
+          </div>
+
+
+            
+    </section>
+</div> <!--container Features -->
+<!--Jquery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!--Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
